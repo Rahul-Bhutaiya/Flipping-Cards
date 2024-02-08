@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    background-color: #1e1e1e;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: whitesmoke;
+    font-family: 'Josefin Sans',sans-serif;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#card-container{
+    height: 460px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    margin: 20px 40px 40px 20px;
+    perspective: 600px;
+}
+
+.front,.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 10px solid whitesmoke;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    transition: transform 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.card:hover .front{
+    transform: rotateY(-180deg);
+}
+
+.front img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.back{
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+}
+
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+
+.text-container{
+    padding: 20px;
+    text-align: center;
+}
+
+.caption{
+    font-style: italic;
+    font-weight: 100;
+}
+
+.name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.icon-set{
+    padding: 10px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 23px;
+}
+
+.icon-set a{
+    color: whitesmoke;
+    cursor: pointer;
+    position: relative;    
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.icon-set a::before{
+    content: '';
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+
+.icon-set a:hover{
+    color: black;
+}
+.icon-set a:hover::before{
+    background-color: #68F0D7;
+}
+
+h1{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
