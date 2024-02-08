@@ -9,7 +9,7 @@
     background-color: #1e1e1e;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
     color: whitesmoke;
     font-family: 'Josefin Sans',sans-serif;
     display: flex;
